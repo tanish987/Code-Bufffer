@@ -1,0 +1,43 @@
+# Project: VFS
+# Makefile created by Dev-C++ 5.8.3
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = vfs_driver.o vfs_extract.o vfs_save.o vfs_close.o vfs_load.o vfs_create.o
+LINKOBJ  = vfs_driver.o vfs_extract.o vfs_save.o vfs_close.o vfs_load.o vfs_create.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32 -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
+BIN      = VFS.exe
+CXXFLAGS = $(CXXINCS) -m32 -g3
+CFLAGS   = $(INCS) -m32 -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+vfs_driver.o: vfs_driver.c
+	$(CC) -c vfs_driver.c -o vfs_driver.o $(CFLAGS)
+
+vfs_extract.o: vfs_extract.c
+	$(CC) -c vfs_extract.c -o vfs_extract.o $(CFLAGS)
+
+vfs_save.o: vfs_save.c
+	$(CC) -c vfs_save.c -o vfs_save.o $(CFLAGS)
+
+vfs_close.o: vfs_close.c
+	$(CC) -c vfs_close.c -o vfs_close.o $(CFLAGS)
+
+vfs_load.o: vfs_load.c
+	$(CC) -c vfs_load.c -o vfs_load.o $(CFLAGS)
+
+vfs_create.o: vfs_create.c
+	$(CC) -c vfs_create.c -o vfs_create.o $(CFLAGS)
