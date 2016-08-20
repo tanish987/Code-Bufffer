@@ -1,3 +1,21 @@
+/**
+ * Given two sorted arrays A and B, generate all possible arrays such that first element is taken from A then from B then from A and so on in increasing order till the arrays exhausted. The generated arrays should end with an element from B.
+
+    For Example 
+    A = {10, 15, 25}
+    B = {1, 5, 20, 30}
+
+    The resulting arrays are:
+    10 20
+    10 20 25 30
+    10 30
+    15 20
+    15 20 25 30
+    15 30
+    25 30
+ */
+
+
 package G4G;
 import java.util.*;
 import java.lang.*;
@@ -47,18 +65,18 @@ class sortedArMs
                 k = (-1)*k -1;
                 
 		for(int i = k; i <= end; i++){
-                   //     System.out.println(index);
+                 
 			data[index] = list[i];
 			if(op == 1){
 				for(int j = 1; j <= index; j++){
 					System.out.print(data[j] + " ");
 				}
 				System.out.println();
-                     //           rec(A, B, (op == 0)? 1:0, na, nb, index+1, data);
+                     
 			}
-			//else{
+			
 				rec(A, B, (op == 0)? 1:0, na, nb, index+1, data);
-			//}
+			
 		}
 	}
 }
