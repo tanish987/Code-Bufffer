@@ -1,7 +1,7 @@
 /**
 
 Given a number line from -infinity to +infinity. 
-You start at 0 and can go either to the left or to the right. The condition is that in i’th move, you take i steps.
+You start at 0 and can go either to the left or to the right. The condition is that in iâ€™th move, you take i steps.
 a) Find if you can reach a given number x
 b) Find the most optimal way to reach a given number x, if we can indeed reach it. 
 For example, 3 can be reached om 2 steps, (0, 1) (1, 3) and 4 can be reached in 3 steps (0, -1), (-1, 1) (1, 4).
@@ -9,6 +9,7 @@ For example, 3 can be reached om 2 steps, (0, 1) (1, 3) and 4 can be reached in 
 **/
 #include<stdio.h>
 #include<limits.h>
+#include<conio.h>
 
 int minSteps(int x, int move, int count);
 int min(int,int);
@@ -39,7 +40,8 @@ int minSteps(int x, int move, int count){
     }
     count++;
     
-    return min(minSteps(x, move+count, count), minSteps(x, move-count, count));
+    int r = min(minSteps(x, move+count, count), minSteps(x, move-count, count));
+    return r;
 }
 
 
