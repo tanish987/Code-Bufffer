@@ -2,6 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+// To find the maximum sum subarray
 package G4G;
 import java.io.*;
 /**
@@ -11,8 +12,8 @@ import java.io.*;
 public class maxSumSub {
     public static void main(String[] arg) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        
-        int len = Integer.parseInt(br.readLine());
+        String s = br.readLine();
+        int len = Integer.parseInt();
         
         int arr[] = new int[len];
         
